@@ -38,7 +38,7 @@ class Profile extends Component {
             <h1>Profile</h1>
           </div>
           <div className="row">
-            <h4>Welcome {this.state.name}</h4>
+            {/* <h4>Welcome {this.state.name}</h4> */}
           </div>
           <div className="row">
             <div className="col s12">
