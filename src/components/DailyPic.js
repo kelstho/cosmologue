@@ -5,7 +5,7 @@ function DailyPic(props) {
     <div>
       <img className="responsive-img" id="daily-pic" src={props.image} alt={props.title} />
       <br></br>
-      <h5 id="pic-title">{this.results.title}</h5>
+      <h5 id="picTitle">{this.results.title}</h5>
     </div>
   )
 }
