@@ -5,7 +5,7 @@ function News(props) {
     <ul className="collection">
       {props.articles.map(article => (
         <li className="collection-item" key={article.id}>
-          {article.name}
+          <a href={article.source}>{article.name}</a>
         </li>
       ))}
     </ul>
