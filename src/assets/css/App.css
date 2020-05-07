@@ -1,12 +1,40 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+<<<<<<< Updated upstream
+=======
+/* controls big main navbar */
+.nav {
+    background-color: transparent;
+    width: inherit;
 }
 
+/* controls drawer nav */
+.drawer {
+    background-color: rgba(0, 0, 0, 0.527) !important;
+    border-right-color: white !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* drawer title */
+.drawer > nav{
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* keep drawer button white on small screens */
+.mdl-layout__drawer-button {
+    color: white !important
+}
+
+.footer {
+    justify-content: center !important;
+    padding: 0% !important;
+    background: rgba(0, 0, 0, 0.555) !important;
+}
+
+>>>>>>> Stashed changes
 .page-content {
-  color: white
+    color: white;
 }
