@@ -2,13 +2,13 @@
     text-align: center;
 }
 
-<<<<<<< Updated upstream
-=======
+
 /* controls big main navbar */
 .nav {
     background-color: transparent;
     width: inherit;
 }
+
 
 /* controls drawer nav */
 .drawer {
@@ -34,7 +34,10 @@
     background: rgba(0, 0, 0, 0.555) !important;
 }
 
->>>>>>> Stashed changes
+nav {
+  background-color: transparent;
+}
+
 .page-content {
     color: white;
 }
