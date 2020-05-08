@@ -48,7 +48,20 @@ class Home extends Component {
               /> */}
             </div>
             <div className="col s12 m4">
-              {/* <News articles={this.state.articles} /> */}
+              <ul className="collection">
+                  <li className="collection-item">
+                    <a href="#">News Article 1</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 2</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 3</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 4</a>
+                  </li>
+              </ul>
             </div>
           </div>
         </div>
