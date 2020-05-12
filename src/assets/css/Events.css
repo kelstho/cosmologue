@@ -1,0 +1,29 @@
+.display-cal {
+    opacity: 100%;
+    /* border: solid black; */
+    width: 100%;
+    height: fit-content;
+    color: black;
+}
+
+.react-calendar {
+    min-width: fit-content;
+    min-height: fit-content;
+    border: 2px outset rgba(109, 109, 109, 0.555);
+}
+
+.react-calendar__tile {
+    height: 7em;
+    font-size: 15px;
+}
+
+h1 {
+    padding: 1em;
+}
+
+.collection {
+    /* border: solid black; */
+    height: fit-content;
+    overflow-y: scroll;
+    min-width: 300px;
+}

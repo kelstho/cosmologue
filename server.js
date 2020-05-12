@@ -9,7 +9,12 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'build')));
+
+// static assets (heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, 'build')));
+}
+
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());

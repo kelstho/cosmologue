@@ -12,17 +12,25 @@
 
 /* controls drawer nav */
 .drawer {
-    background-color: rgba(0, 0, 0, 0.527) !important;
+    background-color: rgba(0, 0, 0, 0.651) !important;
+    backdrop-filter: blur(10px);
     border-right-color: white !important;
     -webkit-tap-highlight-color: transparent !important;
 }
 
-/* drawer title */
-.drawer > nav{
+/* drawer nav */
+.drawer > nav {
     background-color: transparent !important;
     box-shadow: none !important;
 }
-
+/* drawer title */
+.mdl-layout-title {
+    /* font-size: 2em !important; */
+}
+/* drawer links */
+.mdl-navigation__link {
+    font-size: 20px !important;
+}
 /* keep drawer button white on small screens */
 .mdl-layout__drawer-button {
     color: white !important
