@@ -2,7 +2,7 @@ const express = require('express');
 var session = require("express-session");
 const mongoose = require("mongoose");
 const routes = require("./routes");
-const path = require('path');
+// const path = require('path');
 var passport = require("./config/passport");
 const port = process.env.PORT || 8080;
 const app = express();
@@ -12,6 +12,7 @@ app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static('client/build'));
+}
 
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
