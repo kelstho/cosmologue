@@ -1,11 +1,3 @@
-.display-cal {
-    opacity: 100%;
-    /* border: solid black; */
-    width: 100%;
-    height: fit-content;
-    color: black;
-}
-
 .react-calendar {
     min-width: fit-content;
     min-height: fit-content;
