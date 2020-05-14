@@ -1,3 +1,11 @@
 #dailyPic {
  max-width: 45vw;
 }
+
+#news-container li {
+  background-color: transparent;
+}
+
+#news-container a {
+  color: lightblue;
+}
