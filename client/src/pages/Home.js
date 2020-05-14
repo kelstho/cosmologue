@@ -55,7 +55,7 @@ class Home extends Component {
                 </ul>
               </div>
             </div>
-            <div className="col s12 m4">
+            <div className="col s12 m4" id="news-container">
               <ul className="collection">
                   <li className="collection-item">
                     <a href="#">News Article 1</a>
@@ -68,6 +68,54 @@ class Home extends Component {
                   </li>
                   <li className="collection-item">
                     <a href="#">News Article 4</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 5</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 6</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 7</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 8</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 9</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 10</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 11</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 12</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 13</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 14</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 15</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 16</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 17</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 18</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 19</a>
+                  </li>
+                  <li className="collection-item">
+                    <a href="#">News Article 20</a>
                   </li>
               </ul>
             </div>
