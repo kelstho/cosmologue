@@ -7,21 +7,22 @@ class Signup extends Component {
   state = {
     name: "",
     username: "",
-    birthday: 0,
+    birthday: "",
     password: ""
   }
 
   handleInputChange = event => {
+    console.log(event);
     let value = event.target.value;
     const name = event.target.name;
 
     if (name === "password") {
       value = value.substring(0, 15);
-    }
+    };
+    console.log(this.state);
     this.setState({
       [name]: value
     });
-    console.log(this.state);
   }
 
   handleFormSubmit = event => {
@@ -46,7 +47,7 @@ class Signup extends Component {
     this.setState({
       name: "",
       username: "",
-      birthday: 0,
+      birthday: "",
       password: ""
     });
   }
