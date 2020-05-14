@@ -6,6 +6,7 @@ const db = require("../models");
 
 module.exports = {
   create: function(req, res) {
+    console.log(res);
     db.UserData.register({username: req.body.username, sign: req.body.username}, req.body.password)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

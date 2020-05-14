@@ -1,5 +1,6 @@
-import React, { Component } from "react"
-import "../assets/css/Signup.css"
+import React, { Component } from "react";
+import "../assets/css/Signup.css";
+import axios from "axios";
 
 class Signup extends Component {
 
@@ -20,6 +21,7 @@ class Signup extends Component {
     this.setState({
       [name]: value
     });
+    console.log(this.state);
   }
 
   handleFormSubmit = event => {
@@ -31,6 +33,15 @@ class Signup extends Component {
     } else {
       alert(`Hello ${this.state.name}`);
     }
+
+    axios.post(
+      "/api/user",
+      {
+        username: this.state.username,
+        sign: this.state.birthday,
+        password: this.state.password
+      }
+      )
 
     this.setState({
       name: "",
