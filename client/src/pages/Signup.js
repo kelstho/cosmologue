@@ -22,7 +22,7 @@ class Signup extends Component {
     });
   }
 
-  handleFormSubmit = event => {
+  handleSignupSubmit = event => {
     event.preventDefault();
     if (!this.state.name || !this.state.username || !this.state.birthday) {
       alert("Please fill out all the required information");
@@ -36,6 +36,22 @@ class Signup extends Component {
       name: "",
       username: "",
       birthday: 0,
+      password: ""
+    });
+  }
+
+  handleLoginSubmit = event => {
+    event.preventDefault();
+    if (!this.state.username) {
+      alert("Please enter your username");
+    } else if (!this.state.password) {
+      alert("Please enter your password");
+    } else {
+      alert(`Hello ${this.state.name}`);
+    }
+
+    this.setState({
+      username: "",
       password: ""
     });
   }
@@ -97,7 +113,7 @@ class Signup extends Component {
               </div>
             </div>
             <div className="row">
-              <button onClick={this.handleFormSubmit}>Signup</button>
+              <button onClick={this.handleSignupSubmit}>Signup</button>
             </div>
           </form>
         </div>
@@ -129,7 +145,7 @@ class Signup extends Component {
               </div>
             </div>
             <div className="row">
-              <button onClick={this.handleFormSubmit}>Login</button>
+              <button onClick={this.handleLoginSubmit}>Login</button>
             </div>
           </form>
         </div>
