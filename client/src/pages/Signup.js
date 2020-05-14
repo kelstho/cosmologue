@@ -64,7 +64,7 @@ class Signup extends Component {
         <div className="row">
           <form className="col s12">
             <div className="row">
-              <div class="input-field col s12">
+              <div className="input-field col s12">
                 <input
                   value={this.state.name}
                   name="name"
@@ -75,7 +75,7 @@ class Signup extends Component {
               </div>
             </div>
             <div className="row">
-              <div class="input-field col s12">
+              <div className="input-field col s12">
                 <input
                   value={this.state.username}
                   name="username"
@@ -98,7 +98,7 @@ class Signup extends Component {
               </div>
             </div>
             <div className="row">
-              <div class="input-field col s12">
+              <div className="input-field col s12">
                 <input
                   value={this.state.password}
                   name="password"
@@ -119,7 +119,7 @@ class Signup extends Component {
         <div className="row">
           <form className="col s12">
             <div className="row">
-              <div class="input-field col s12">
+              <div className="input-field col s12">
                 <input
                   value={this.state.username}
                   name="username"
@@ -130,7 +130,7 @@ class Signup extends Component {
               </div>
             </div>
             <div className="row">
-              <div class="input-field col s12">
+              <div className="input-field col s12">
                 <input
                   value={this.state.password}
                   name="password"

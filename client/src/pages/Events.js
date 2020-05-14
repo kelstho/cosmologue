@@ -1,6 +1,7 @@
 import React, { Component } from "react"
-import Calendar from 'react-calendar'
-import 'react-calendar/dist/Calendar.css';
+// import Calendar from 'react-calendar'
+// import 'react-calendar/dist/Calendar.css';
+import Iframe from 'react-iframe'
 import "../assets/css/Events.css";
 
 
@@ -19,7 +20,15 @@ class Events extends Component {
           <div className="row">
             <div className="col s12 m8">
               <div className="display-cal">
-                <Calendar onChange={this.onChange} value={this.state.date} />
+                {/* <Calendar onChange={this.onChange} value={this.state.date} /> */}
+                <Iframe url="https://in-the-sky.org/widgets/newscal.php?skin=1"
+                  width="860px"
+                  height="1000px"
+                  id="events-cal-id"
+                  className="events-cal"
+                  display="initial"
+                  position="relative"
+                  frameBorder="0"/>
               </div>
             </div>
             <div className="col s12 m4">
