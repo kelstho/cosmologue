@@ -1,22 +1,25 @@
-import React, { Component } from "react"
-import "../assets/css/Signup.css"
+import React, { Component } from "react";
+import "../assets/css/Signup.css";
+import axios from "axios";
 
 class Signup extends Component {
 
   state = {
     name: "",
     username: "",
-    birthday: 0,
+    birthday: "",
     password: ""
   }
 
   handleInputChange = event => {
+    console.log(event);
     let value = event.target.value;
     const name = event.target.name;
 
     if (name === "password") {
       value = value.substring(0, 15);
-    }
+    };
+    console.log(this.state);
     this.setState({
       [name]: value
     });
@@ -32,10 +35,19 @@ class Signup extends Component {
       alert(`Hello ${this.state.name}`);
     }
 
+    axios.post(
+      "/api/user",
+      {
+        username: this.state.username,
+        sign: this.state.birthday,
+        password: this.state.password
+      }
+      )
+
     this.setState({
       name: "",
       username: "",
-      birthday: 0,
+      birthday: "",
       password: ""
     });
   }
