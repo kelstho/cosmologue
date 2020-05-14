@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Horoscope from "../components/Horoscope";
 import SavedEvents from "../components/SavedEvents";
-import ClickedEvent from "../components/ClickedEvent"
+import ClickedEvent from "../components/ClickedEvent";
+import "../assets/css/Profile.css";
 
 class Profile extends Component {
   // state = {
@@ -35,20 +36,21 @@ class Profile extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <h1>Profile</h1>
+            <h1>P R O F I L E</h1>
           </div>
           <div className="row">
             <h4>Welcome User!</h4>
           </div>
           <div className="row">
-            <div className="col s12">
+            <div className="col s12" id="horo-container">
+              <h4>H O R O S C O P E</h4>
               <p>Horoscope horoscope horoscope blah blah blah Horoscope horoscope horoscope blah blah blah Horoscope horoscope horoscope blah blah blah Horoscope horoscope horoscope blah blah blahHoroscope horoscope horoscope blah blah blah Horoscope horoscope horoscope blah blah blah Horoscope horoscope horoscope blah blah blah Horoscope horoscope horoscope blah blah blah</p>
             </div>
           </div>
         </div>
         <div className="container">
           <div className="row">
-            <div className="col s12 m5">
+            <div className="col s12 m5" id="event-container">
               <ul className="collection">
                 <li className="collection-item">
                   <a href="#">Lunary Event</a>
