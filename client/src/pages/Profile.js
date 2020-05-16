@@ -4,7 +4,6 @@ import SavedEvents from "../components/SavedEvents";
 import ClickedEvent from "../components/ClickedEvent"
 import FavCard from "../components/InfoCard";
 import TabView from "../components/CardTabs";
-import ClickedEvent from "../components/ClickedEvent";
 import "../assets/css/Profile.css";
 
 class Profile extends Component {
