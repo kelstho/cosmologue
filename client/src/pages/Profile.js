@@ -5,19 +5,25 @@ import ClickedEvent from "../components/ClickedEvent"
 import FavCard from "../components/InfoCard";
 import TabView from "../components/CardTabs";
 import "../assets/css/Profile.css";
+import axios from "axios";
 
 class Profile extends Component {
-  // state = {
-  //   name: "",
-  //   horoscope: "",
-  //   events: []
-  // };
+  state = {
+    // name: "",
+    horoscope: "",
+    // events: []
+  };
 
-  // componentDidMount() {
-  //   this.getName("");
-  //   this.searchScope("");
-  //   this.searchEvents("");
-  // };
+  componentDidMount() {
+    axios.post("https://aztro.sameerkumar.website?sign=aries&day=today")
+      .then(res => {
+        this.setState({
+          horoscope: res.data.description
+        });
+      })
+    // this.getName("");
+    // this.searchEvents("");
+  };
 
   // function getName() {
 
@@ -46,7 +52,9 @@ class Profile extends Component {
           <div className="row">
             <div className="col s12" id="horo-container">
               <h4>H O R O S C O P E</h4>
-              <p>Horoscope horoscope horoscope blah blah blah Horoscope horoscope horoscope blah blah blah Horoscope horoscope horoscope blah blah blah Horoscope horoscope horoscope blah blah blahHoroscope horoscope horoscope blah blah blah Horoscope horoscope horoscope blah blah blah Horoscope horoscope horoscope blah blah blah Horoscope horoscope horoscope blah blah blah</p>
+              <Horoscope 
+                horoscope={this.state.horoscope}
+              />
             </div>
           </div>
         </div>
@@ -54,7 +62,7 @@ class Profile extends Component {
           <div className="row">
             <div className="col s12 m5">
               <TabView>
-                  {/* <FavCard
+                {/* <FavCard
                     title='News Event 1'
                     date='02/14/2020'
                     description='Insert the description here' />
