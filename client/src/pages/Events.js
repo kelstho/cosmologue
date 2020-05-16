@@ -1,57 +1,59 @@
 import React, { Component } from "react"
 // import Calendar from 'react-calendar'
 // import 'react-calendar/dist/Calendar.css';
+import Calendar from "../components/Calendar";
+import EventCard from "../components/InfoCard";
 import Iframe from 'react-iframe'
 import "../assets/css/Events.css";
 
-
 class Events extends Component {
-  state = {
-    date: new Date()
+  constructor(props) {
+    super(props)
+    this.state = { value: '' }
+    // this.iframe = React.createRef()
   }
 
-  onChange = date => this.setState({ date })
+  // componentDidMount() {
+  //   console.log(getElementById)
+  // }
 
   render() {
     return (
       <div>
-        <h1>Calendar of Events</h1>
+        <h1 id='page-title'>Calendar of Events</h1>
         <div className="container">
           <div className="row">
-            <div className="col s12 m8">
-              <div className="display-cal">
-                {/* <Calendar onChange={this.onChange} value={this.state.date} /> */}
-                <Iframe url="https://in-the-sky.org/widgets/newscal.php?skin=1"
-                  width="860px"
-                  height="1000px"
-                  id="events-cal-id"
-                  className="events-cal"
-                  display="initial"
-                  position="relative"
-                  frameBorder="0"/>
+            <div className='events-div'>
+              <div className="col s12 m8">
+                <div className="display-cal">
+                  {/* <Calendar onChange={this.onChange} value={this.state.date} /> */}
+                  <Calendar />
+                </div>
               </div>
-            </div>
-            <div className="col s12 m4">
-              <ul className="collection">
-                <li className="collection-item">
-                  <a href="#">Event 1</a>
-                </li>
-                <li className="collection-item">
-                  <a href="#">Event 2</a>
-                </li>
-                <li className="collection-item">
-                  <a href="#">Event 3</a>
-                </li>
-                <li className="collection-item">
-                  <a href="#">Event 4</a>
-                </li>
-                <li className="collection-item">
-                  <a href="#">Event 5</a>
-                </li>
-                <li className="collection-item">
-                  <a href="#">Event 6</a>
-                </li>
-              </ul>
+              <div className="col s12 m4">
+                <ul className='collection'>
+                  <EventCard
+                    title='Astronomical Event 1'
+                    date='02/14/2020'
+                    description='Insert the description here' />
+                  <EventCard
+                    title='Astronomical Event 2'
+                    date='02/14/2020'
+                    description='Insert the description here' />
+                  <EventCard
+                    title='Astronomical Event 3'
+                    date='02/14/2020'
+                    description='Insert the description here' />
+                  <EventCard
+                    title='Astronomical Event 4'
+                    date='02/14/2020'
+                    description='Insert the description here' />
+                  <EventCard
+                    title='Astronomical Event 5'
+                    date='02/14/2020'
+                    description='Insert the description here' />
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -60,5 +62,7 @@ class Events extends Component {
     )
   }
 }
+
+console.log(document.getElementById('event6'))
 
 export default Events;

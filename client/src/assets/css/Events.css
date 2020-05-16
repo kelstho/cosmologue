@@ -1,5 +1,5 @@
-.react-calendar {
-    min-width: fit-content;
+/* .react-calendar {
+    min-width: 30;
     min-height: fit-content;
     border: 2px outset rgba(109, 109, 109, 0.555);
 }
@@ -7,15 +7,21 @@
 .react-calendar__tile {
     height: 7em;
     font-size: 15px;
-}
+} */
 
-h1 {
-    padding: 1em;
-}
-
-.collection {
-    /* border: solid black; */
-    height: fit-content;
+.display-cal {
+    /* margin-left: -5em; */
     overflow-y: scroll;
-    min-width: 300px;
+    overflow-x: scroll;
+}
+
+.events-div {
+    margin: auto;
+    min-width: 30vw;   
+    
+}
+
+.container {
+    min-width: 80vw;
+    align-content: center;
 }

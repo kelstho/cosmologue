@@ -3,6 +3,7 @@ import axios from "axios";
 import DailyPic from "../components/DailyPic";
 import News from "../components/News";
 import "../assets/css/Home.css";
+import NewsCard from "../components/InfoCard";
 
 class Home extends Component {
   state = {
@@ -42,7 +43,7 @@ class Home extends Component {
           <div className="row">
             <div className="col s12 m8">
               <div className="img-container">
-                <img alt={this.state.title} src={this.state.url} id="dailyPic"/>
+                <img alt={this.state.title} src={this.state.url} id="dailyPic" />
               </div>
               <div className="content">
                 <ul>
@@ -57,66 +58,26 @@ class Home extends Component {
             </div>
             <div className="col s12 m4" id="news-container">
               <ul className="collection">
-                  <li className="collection-item">
-                    <a href="#">News Article 1</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 2</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 3</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 4</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 5</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 6</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 7</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 8</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 9</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 10</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 11</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 12</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 13</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 14</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 15</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 16</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 17</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 18</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 19</a>
-                  </li>
-                  <li className="collection-item">
-                    <a href="#">News Article 20</a>
-                  </li>
+                <NewsCard
+                  title='News Event 1'
+                  date='02/14/2020'
+                  description='Insert the description here' />
+                <NewsCard
+                  title='News Event 2'
+                  date='02/14/2020'
+                  description='Insert the description here' />
+                <NewsCard
+                  title='News Event 3'
+                  date='02/14/2020'
+                  description='Insert the description here' />
+                <NewsCard
+                  title='News Event 4'
+                  date='02/14/2020'
+                  description='Insert the description here' />
+                <NewsCard
+                  title='News Event 5'
+                  date='02/14/2020'
+                  description='Insert the description here' />
               </ul>
             </div>
           </div>
