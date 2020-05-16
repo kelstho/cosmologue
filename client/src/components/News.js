@@ -3,9 +3,9 @@ import React from "react";
 function News(props) {
   return (
     <ul className="collection">
-      {props.articles.map(article => (
-        <li className="collection-item" key={article.id}>
-          <a href={article.source}>{article.name}</a>
+      {props.articles.map(results => (
+        <li className="collection-item" key={results.publishedAt}>
+          <a href={results.url} target="_blank" rel="noreferrer noopener">{results.title}</a>
         </li>
       ))}
     </ul>
