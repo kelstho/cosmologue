@@ -37,11 +37,11 @@ class Signup extends Component {
 
     axios.post(
       "/api/user",
-      {
-        username: this.state.username,
-        sign: this.state.birthday,
-        password: this.state.password
-      }
+        {
+          username: this.state.username,
+          sign: this.state.birthday,
+          password: this.state.password
+        }
       )
 
     this.setState({
@@ -61,6 +61,14 @@ class Signup extends Component {
     } else {
       alert(`Hello ${this.state.name}`);
     }
+
+    axios.post(
+      "/api/user/login",
+        {
+          username: this.state.username,
+          password: this.state.password
+        }
+    ).then(res => console.log(res));
 
     this.setState({
       username: "",
