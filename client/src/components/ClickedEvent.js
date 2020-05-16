@@ -1,7 +1,7 @@
-import React from "react";
+// import React from "react";
 
-function ClickedEvent(props) {
-  return <p id="clickedEvent">{props.events.event}</p>
-}
+// function ClickedEvent(props) {
+//   return <p id="clickedEvent">{props.events.event}</p>
+// }
 
-export default ClickedEvent;
+// export default ClickedEvent;
