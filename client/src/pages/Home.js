@@ -7,27 +7,28 @@ import NewsCard from "../components/InfoCard";
 
 class Home extends Component {
   state = {
-    // articles: []
-  };
+    title: "",
+    url: "",
+    explanation: "",
+    articles: []
+  }
 
   componentDidMount() {
     axios.get("https://api.nasa.gov/planetary/apod?api_key=h48365nXKWwr83z8vL6gGli8DtlsXafowiWijj4h")
       .then(res => {
-        const title = res.data.title;
-        const url = res.data.url;
-        const explanation = res.data.explanation;
-        this.setState({ title });
-        this.setState({ url });
-        this.setState({ explanation });
+        this.setState({
+          title: res.data.title,
+          url: res.data.url,
+          explanation: res.data.explanation
+        });
       })
-    // this.searchNews("");
+    axios.get("https://newsapi.org/v2/everything?language=en&domains=nasa.gov&apiKey=3e287acea75f40dcbc3c4008f443dead")
+      .then(res => {
+        this.setState({
+          articles: res.data.articles
+        });
+      })
   }
-
-  // searchNews = query => {
-  //   API.search(query)
-  //     .then(res => this.setState({ results: res.data.data }))
-  //     .catch(err => console.log(err));
-  // };
 
   render() {
     return (
@@ -57,28 +58,7 @@ class Home extends Component {
               </div>
             </div>
             <div className="col s12 m4" id="news-container">
-              <ul className="collection">
-                <NewsCard
-                  title='News Event 1'
-                  date='02/14/2020'
-                  description='Insert the description here' />
-                <NewsCard
-                  title='News Event 2'
-                  date='02/14/2020'
-                  description='Insert the description here' />
-                <NewsCard
-                  title='News Event 3'
-                  date='02/14/2020'
-                  description='Insert the description here' />
-                <NewsCard
-                  title='News Event 4'
-                  date='02/14/2020'
-                  description='Insert the description here' />
-                <NewsCard
-                  title='News Event 5'
-                  date='02/14/2020'
-                  description='Insert the description here' />
-              </ul>
+              <News articles={this.state.articles} />
             </div>
           </div>
         </div>
