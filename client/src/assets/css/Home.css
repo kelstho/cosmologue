@@ -1,5 +1,6 @@
 #dailyPic {
  max-width: 45vw;
+
  min-width: 20vw;
 }
 
@@ -19,4 +20,12 @@
 }
 .MuiCardHeader-title{
     color: rgb(66, 0, 128);
+}
+
+#news-container li {
+  background-color: transparent;
+}
+
+#news-container a {
+  color: lightblue;
 }

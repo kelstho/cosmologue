@@ -56,7 +56,7 @@ class Home extends Component {
                 </ul>
               </div>
             </div>
-            <div className="col s12 m4">
+            <div className="col s12 m4" id="news-container">
               <ul className="collection">
                 <NewsCard
                   title='News Event 1'
