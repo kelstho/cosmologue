@@ -8,7 +8,12 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.CalEvent.update({title: req.body.title}, req.body, {upsert: false})
+    db.CalEvent.update({
+      year: req.body.year,
+      month: req.body.month,
+      day: req.body.day,
+      title: req.body.title
+    }, req.body, {upsert: true})
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
   },
