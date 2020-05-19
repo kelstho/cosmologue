@@ -1,3 +1,4 @@
 module.exports = {
-  UserData: require("./userdata")
+  UserData: require("./userdata"),
+  CalEvent: require("./calEvent")
 };

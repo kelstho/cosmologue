@@ -1,5 +1,5 @@
 const db = require("../models");
-const passport = require("../config/passport");
+// const passport = require("../config/passport");
 
 // db.UserData.register({username:'paul', active: false}, 'paul');
 // db.UserData.register({username:'jay', active: false}, 'jay');
@@ -12,12 +12,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  login: function(req, res) {
+  // login: function(req, res) {
     // console.log(req);
     // passport.authenticate('local', { failureRedirect: '/signup', failureFlash: true })
     //   .then(result => res.redirect("/"));
-    res.json({redirectURI: "/"});
-  },
+  //   res.json({redirectURI: "/"});
+  // },
   data: function(req, res) {
     db.UserData.findById(req.user._id)
       .then(dbModel => res.json({ 
