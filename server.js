@@ -19,6 +19,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(routes);
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://user:cosmologue1@ds129469.mlab.com:29469/heroku_f4r7d3rj",
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/cosmologue",
 { useNewUrlParser: true, useUnifiedTopology: true });
 
