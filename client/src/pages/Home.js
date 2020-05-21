@@ -20,7 +20,7 @@ class Home extends Component {
           explanation: res.data.explanation
         });
       })
-    axios.get("https://newsapi.org/v2/everything?language=en&domains=nasa.gov&apiKey=3e287acea75f40dcbc3c4008f443dead")
+    axios.get("https://newsapi.org/v2/everything?language=en&domains=nasa.gov&apiKey=9691bd6152c74d149ff1b25eb77a5680")
       .then(res => {
         this.setState({
           articles: res.data.articles
@@ -33,7 +33,6 @@ class Home extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <h4>Welcome To Your Own Personal</h4>
             <h1>C O S M O L O G U E</h1>
             <h5>-A Guide To Your Journey Through the Stars-</h5>
           </div>
@@ -46,10 +45,10 @@ class Home extends Component {
               </div>
               <div className="content">
                 <ul>
-                  <li>
+                  <li id="pic-title">
                     {this.state.title}
                   </li>
-                  <li>
+                  <li id="explanation">
                     {this.state.explanation}
                   </li>
                 </ul>

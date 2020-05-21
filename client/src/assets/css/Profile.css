@@ -21,3 +21,11 @@
 #event-container a {
   color: lightblue;
 }
+
+.no-mt {
+  margin-top: 0px;
+}
+
+.no-mb {
+  margin-bottom: 0px;
+}
