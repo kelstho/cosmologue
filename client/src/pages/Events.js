@@ -20,7 +20,7 @@ class Events extends Component {
   render() {
     return (
       <div>
-        <h1 id='page-title'>Calendar of Events</h1>
+        <h1 id='page-title'>E V E N T S</h1>
         <div className="container">
           <div className="row">
             <div className='events-div'>

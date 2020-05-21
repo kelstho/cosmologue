@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "../components/Button";
 import "../assets/css/Signup.css";
 import axios from "axios";
 
@@ -37,12 +38,12 @@ class Signup extends Component {
 
     axios.post(
       "/api/user",
-        {
-          username: this.state.username,
-          sign: this.state.birthday,
-          password: this.state.password
-        }
-      )
+      {
+        username: this.state.username,
+        sign: this.state.birthday,
+        password: this.state.password
+      }
+    )
 
     this.setState({
       name: "",
@@ -64,10 +65,10 @@ class Signup extends Component {
 
     axios.post(
       "/api/user/login",
-        {
-          username: this.state.username,
-          password: this.state.password
-        }
+      {
+        username: this.state.username,
+        password: this.state.password
+      }
     ).then(res => console.log(res));
 
     this.setState({
@@ -79,11 +80,11 @@ class Signup extends Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
-          <h1>Start Your Journey Today!</h1>
+        <div className="row no-margin">
+          <h2>S I G N U P</h2>
         </div>
-        <div className="row">
-          <h3>Signup</h3>
+        <div className="row no-margin">
+          <h5 className="no-margin">-Start your journey today!-</h5>-
         </div>
         <div className="row">
           <form className="col s12">
@@ -133,12 +134,16 @@ class Signup extends Component {
               </div>
             </div>
             <div className="row">
-              <button onClick={this.handleSignupSubmit}>Signup</button>
+              <Button
+                onClick={this.handleSignupSubmit}
+              >
+                Sign Up
+              </Button>
             </div>
           </form>
         </div>
         <div className="row">
-          <h3>Login</h3>
+          <h2>L O G I N</h2>
         </div>
         <div className="row">
           <form className="col s12">
@@ -165,7 +170,9 @@ class Signup extends Component {
               </div>
             </div>
             <div className="row">
-              <button onClick={this.handleLoginSubmit}>Login</button>
+              <Button
+                onClick={this.handleLoginSubmit}
+              >Log In</Button>
             </div>
           </form>
         </div>

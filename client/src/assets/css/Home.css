@@ -21,3 +21,13 @@
    .MuiCardHeader-title{
        color: rgb(66, 0, 128);
    }
+
+   #pic-title {
+       font-size: 20px;
+       margin-bottom: 4px;
+   }
+
+   #explanation {
+       font-size: 15px;
+       line-height: 1.5;
+   }
