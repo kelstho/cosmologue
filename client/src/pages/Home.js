@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import DailyPic from "../components/DailyPic";
-import News from "../components/News";
 import "../assets/css/Home.css";
-import NewsCard from "../components/InfoCard";
+import NewsCard from "../components/NewsCard";
 
 class Home extends Component {
   state = {
@@ -58,7 +56,12 @@ class Home extends Component {
               </div>
             </div>
             <div className="col s12 m4" id="news-container">
-              <News articles={this.state.articles} />
+              <ul className="collection">
+                <NewsCard
+                  articles={this.state.articles}
+                >
+                </NewsCard>
+              </ul>
             </div>
           </div>
         </div>
@@ -66,5 +69,7 @@ class Home extends Component {
     )
   }
 }
+
+{/* <News articles={this.state.articles} /> */ }
 
 export default Home;
