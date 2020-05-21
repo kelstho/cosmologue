@@ -42,7 +42,7 @@ module.exports = {
               month: dateMonth,
               day: dateDay,
               title: title,
-              link: dateYear,
+              link: link,
               summary: summary,
             };
     
