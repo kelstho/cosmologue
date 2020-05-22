@@ -51,7 +51,7 @@ module.exports = {
         })    
       })
     }
-    arr.forEach((event) => {
+    await arr.forEach((event) => {
       db.CalEvent.updateOne({
         year: event.year,
         month: event.month,
@@ -63,8 +63,6 @@ module.exports = {
       (err, writeOpResult) => {
         if (err) {
           console.log(err)
-        }else {
-          console.log("Successful update!");
         }
       })
     });
