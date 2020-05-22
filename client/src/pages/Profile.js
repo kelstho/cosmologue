@@ -11,7 +11,7 @@ import API from "../utils/API";
 class Profile extends Component {
   state = {
     username: "",
-    // horoscope: "",
+    horoscope: "",
     // events: []
   };
 
@@ -22,13 +22,13 @@ class Profile extends Component {
   getInfo = () => {
     API.getUserInfo()
       .then(res => {
-        // const sign = res.data.sign;
-        // axios.post("https://aztro.sameerkumar.website?sign=" + sign + "&day=today")
-        // .then(res => { 
-        //   this.setState({
-        //     horoscope: res.data.description
-        //   })
-        // })
+        const sign = res.data.sign;
+        axios.post("https://aztro.sameerkumar.website?sign=" + sign + "&day=today")
+        .then(res => { 
+          this.setState({
+            horoscope: res.data.description
+          })
+        })
         this.setState({ username: res.data.username })
       })
   };
@@ -46,9 +46,9 @@ class Profile extends Component {
           <div className="row">
             <div className="col s12" id="horo-container">
               <h4>H O R O S C O P E</h4>
-              {/* <Horoscope
+              <Horoscope
                 horoscope={this.state.horoscope}
-              /> */}
+              />
             </div>
           </div>
         </div>
