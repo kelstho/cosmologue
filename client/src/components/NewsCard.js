@@ -59,8 +59,8 @@ export default function RecipeReviewCard(props) {
                 <ExpandMoreIcon />
               </IconButton>
             }
-            title={<a href={results.url} target="_blank" rel="noreferrer noopener">{results.title}</a>}
-            subheader={results.publishedAt}
+            title={<a href={results.link} target="_blank" rel="noreferrer noopener">{results.title}</a>}
+            subheader={results.publishDate}
           />
           <CardActions disableSpacing>
             <IconButton aria-label="add to favorites"><FavoriteIcon /></IconButton>

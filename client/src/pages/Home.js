@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "../assets/css/Home.css";
 import NewsCard from "../components/NewsCard";
+import API from "../utils/API";
 
 class Home extends Component {
   state = {
@@ -12,20 +13,28 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    axios.get("https://api.nasa.gov/planetary/apod?api_key=h48365nXKWwr83z8vL6gGli8DtlsXafowiWijj4h")
+    this.getPic("");
+    this.getNews("");
+  }
+
+  getPic = () => {
+    API.getDailyPic()
       .then(res => {
         this.setState({
           title: res.data.title,
           url: res.data.url,
           explanation: res.data.explanation
-        });
+        })
       })
-    axios.get("https://newsapi.org/v2/everything?language=en&domains=nasa.gov&apiKey=9691bd6152c74d149ff1b25eb77a5680")
-      .then(res => {
-        this.setState({
-          articles: res.data.articles
-        });
+  }
+
+  getNews = () => {
+    API.getAllNews()
+    .then(res => {
+      this.setState({
+        articles: res.data
       })
+    })
   }
 
   render() {
