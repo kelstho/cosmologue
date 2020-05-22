@@ -7,9 +7,10 @@ import axios from "axios";
 class Signup extends Component {
 
   state = {
-    name: "",
-    username: "",
+    newUsername: "",
     sign: "",
+    newPassword: "",
+    username: "",
     password: ""
   }
 
@@ -18,7 +19,7 @@ class Signup extends Component {
     let value = event.target.value;
     const name = event.target.name;
 
-    if (name === "password") {
+    if (name === "newPassword") {
       value = value.substring(0, 15);
     };
     console.log(this.state);
@@ -29,28 +30,27 @@ class Signup extends Component {
 
   handleSignupSubmit = event => {
     event.preventDefault();
-    if (!this.state.name || !this.state.username || !this.state.sign) {
+    if (!this.state.newUsername || !this.state.sign) {
       alert("Please fill out all the required information");
-    } else if (this.state.password.length < 6) {
+    } else if (this.state.newPassword.length < 6) {
       alert("Please choose a more secure password");
     } else {
-      alert(`Welcome ${this.state.username}`);
+      alert(`Welcome ${this.state.newUsername}`);
     }
 
     axios.post(
       "/api/user",
       {
-        username: this.state.username,
+        username: this.state.newUsername,
         sign: this.state.sign,
-        password: this.state.password
+        password: this.state.newPassword
       }
     )
 
     this.setState({
-      name: "",
-      username: "",
+      newUsername: "",
       sign: "",
-      password: ""
+      newPassword: "",
     });
   }
 
@@ -92,22 +92,11 @@ class Signup extends Component {
             <div className="row">
               <div className="input-field col s12">
                 <input
-                  value={this.state.name}
-                  name="name"
+                  value={this.state.newUsername}
+                  name="newUsername"
                   onChange={this.handleInputChange}
                   type="text"
-                  placeholder="Your Name"
-                />
-              </div>
-            </div>
-            <div className="row">
-              <div className="input-field col s12">
-                <input
-                  value={this.state.username}
-                  name="username"
-                  onChange={this.handleInputChange}
-                  type="text"
-                  placeholder="Your Username"
+                  placeholder="Choose a Username"
                 />
               </div>
             </div>
@@ -125,8 +114,8 @@ class Signup extends Component {
             <div className="row">
               <div className="input-field col s12">
                 <input
-                  value={this.state.password}
-                  name="password"
+                  value={this.state.newPassword}
+                  name="newPassword"
                   onChange={this.handleInputChange}
                   type="password"
                   placeholder="Choose a Password"
@@ -137,7 +126,7 @@ class Signup extends Component {
               <button
                 onClick={this.handleSignupSubmit}
               >
-                Sign Up
+                SIGN UP
               </button>
             </div>
           </form>
@@ -154,7 +143,7 @@ class Signup extends Component {
                   name="username"
                   onChange={this.handleInputChange}
                   type="text"
-                  placeholder="Your Username"
+                  placeholder="Enter your Username"
                 />
               </div>
             </div>
@@ -173,7 +162,7 @@ class Signup extends Component {
               <button
                 onClick={this.handleLoginSubmit}
               >
-                Log In
+                LOG IN
               </button>
             </div>
           </form>
