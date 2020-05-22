@@ -141,11 +141,11 @@ class Signup extends Component {
               </div>
             </div>
             <div className="row">
-              <Button
-                onClick={this.handleSignupSubmit}
+              <button 
+              onClick={this.handleSignupSubmit}
               >
                 Sign Up
-              </Button>
+              </button>
             </div>
           </form>
         </div>
@@ -177,11 +177,11 @@ class Signup extends Component {
               </div>
             </div>
             <div className="row">
-              <Button
+              <button
                 onClick={this.handleLoginSubmit}
               >
                 Log In
-              </Button>
+              </button>
             </div>
           </form>
         </div>
