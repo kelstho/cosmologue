@@ -1,9 +1,11 @@
 const express = require('express');
 var session = require("express-session");
 const mongoose = require("mongoose");
+var schedule = require('node-schedule');
 const routes = require("./routes");
 // const path = require('path');
 var passport = require("./config/passport");
+const update = require("./API");
 const port = process.env.PORT || 8080;
 const app = express();
 
@@ -26,3 +28,13 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/cosmologu
 app.listen(port, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${port}!`);
 });
+ 
+var rule = new schedule.RecurrenceRule();
+rule.hour = 0;
+rule.minute = 0;
+ 
+schedule.scheduleJob(rule, function(){
+  update();
+});
+
+update();
