@@ -10,7 +10,6 @@ class Signup extends Component {
     name: "",
     username: "",
     sign: "",
-    birthday: "",
     password: ""
   }
 
@@ -30,19 +29,19 @@ class Signup extends Component {
 
   handleSignupSubmit = event => {
     event.preventDefault();
-    if (!this.state.name || !this.state.username || !this.state.birthday) {
+    if (!this.state.name || !this.state.username || !this.state.sign) {
       alert("Please fill out all the required information");
     } else if (this.state.password.length < 6) {
       alert("Please choose a more secure password");
     } else {
-      alert(`Hello ${this.state.name}`);
+      alert(`Welcome ${this.state.username}`);
     }
 
     axios.post(
       "/api/user",
       {
         username: this.state.username,
-        sign: this.state.birthday,
+        sign: this.state.sign,
         password: this.state.password
       }
     )
@@ -50,7 +49,7 @@ class Signup extends Component {
     this.setState({
       name: "",
       username: "",
-      birthday: "",
+      sign: "",
       password: ""
     });
   }
@@ -62,7 +61,7 @@ class Signup extends Component {
     } else if (!this.state.password) {
       alert("Please enter your password");
     } else {
-      alert(`Hello ${this.state.name}`);
+      alert(`Hello ${this.state.username}`);
     }
 
     axios.post(
@@ -113,20 +112,14 @@ class Signup extends Component {
               </div>
             </div>
             <div className="row">
-              <Select
-                value={this.state.sign}
-              />
-            </div>
-            <div className="row">
-              <div className="input-field col s6">
+              <div className="input-field col s12">
                 <input
-                  value={this.state.birthday}
-                  name="birthday"
+                  value={this.state.sign}
+                  name="sign"
                   onChange={this.handleInputChange}
-                  type="date"
-                  placeholder="Your Username"
+                  type="text"
+                  placeholder="Enter your Astrological Sign"
                 />
-                <label for="birthday">Your Birthday</label>
               </div>
             </div>
             <div className="row">
@@ -141,8 +134,8 @@ class Signup extends Component {
               </div>
             </div>
             <div className="row">
-              <button 
-              onClick={this.handleSignupSubmit}
+              <button
+                onClick={this.handleSignupSubmit}
               >
                 Sign Up
               </button>
@@ -172,7 +165,7 @@ class Signup extends Component {
                   name="password"
                   onChange={this.handleInputChange}
                   type="password"
-                  placeholder="Choose a Password"
+                  placeholder="Enter your Password"
                 />
               </div>
             </div>
