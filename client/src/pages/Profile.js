@@ -6,38 +6,32 @@ import FavCard from "../components/InfoCard";
 import TabView from "../components/CardTabs";
 import "../assets/css/Profile.css";
 import axios from "axios";
+import API from "../utils/API";
 
 class Profile extends Component {
   state = {
-    // name: "",
-    horoscope: "",
+    username: "",
+    // horoscope: "",
     // events: []
   };
 
   componentDidMount() {
-    axios.post("https://aztro.sameerkumar.website?sign=aries&day=today")
-      .then(res => {
-        this.setState({
-          horoscope: res.data.description
-        });
-      })
-    // this.getName("");
-    // this.searchEvents("");
+    this.getInfo("");
   };
 
-  // function getName() {
-
-  // };
-
-  // searchScope = query => {
-  //   API.search(query)
-  //     .then(res => this.setState({ image: res.data.horoscope }))
-  //     .catch(err => console.log(err));
-  // };
-
-  // function searchEvents() {
-
-  // };
+  getInfo = () => {
+    API.getUserInfo()
+      .then(res => {
+        // const sign = res.data.sign;
+        // axios.post("https://aztro.sameerkumar.website?sign=" + sign + "&day=today")
+        // .then(res => { 
+        //   this.setState({
+        //     horoscope: res.data.description
+        //   })
+        // })
+        this.setState({ username: res.data.username })
+      })
+  };
 
   render() {
     return (
@@ -47,14 +41,14 @@ class Profile extends Component {
             <h1>P R O F I L E</h1>
           </div>
           <div className="row">
-            <h4 className="no-mt">Welcome User Name!</h4>
+            <h4 className="no-mt">Welcome {this.state.username}</h4>
           </div>
           <div className="row">
             <div className="col s12" id="horo-container">
               <h4>H O R O S C O P E</h4>
-              <Horoscope
+              {/* <Horoscope
                 horoscope={this.state.horoscope}
-              />
+              /> */}
             </div>
           </div>
         </div>
