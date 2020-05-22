@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Select from "../components/Select";
 import Button from "../components/Button";
 import "../assets/css/Signup.css";
 import axios from "axios";
@@ -8,6 +9,7 @@ class Signup extends Component {
   state = {
     name: "",
     username: "",
+    sign: "",
     birthday: "",
     password: ""
   }
@@ -111,7 +113,12 @@ class Signup extends Component {
               </div>
             </div>
             <div className="row">
-              < div className="input-field col s6">
+              <Select
+                value={this.state.sign}
+              />
+            </div>
+            <div className="row">
+              <div className="input-field col s6">
                 <input
                   value={this.state.birthday}
                   name="birthday"
@@ -172,7 +179,9 @@ class Signup extends Component {
             <div className="row">
               <Button
                 onClick={this.handleLoginSubmit}
-              >Log In</Button>
+              >
+                Log In
+              </Button>
             </div>
           </form>
         </div>
