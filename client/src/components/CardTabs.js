@@ -6,6 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import FavoriteList from './favoriteList'
 
 
 function TabPanel(props) {
@@ -98,37 +99,38 @@ export default function CustomizedTabs() {
           <StyledTab label="Astronomical Events" {...a11yProps(1)} />
         </StyledTabs>
         <TabPanel value={value} index={0}>
-        <ul className="collection">
-                <li className="collection-item">
-                  <a href="#">News Article 1</a>
-                </li>
-                <li className="collection-item">
-                  <a href="#">News Article 2</a>
-                </li>
-                <li className="collection-item">
-                  <a href="#">News Article 3</a>
-                </li>
-                <li className="collection-item">
-                  <a href="#">News Article 4</a>
-                </li>
-              </ul>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-      <ul className="collection">
-                <li className="collection-item">
-                  <a href="#">Lunary Event</a>
-                </li>
-                <li className="collection-item">
-                  <a href="#">Solar Event</a>
-                </li>
-                <li className="collection-item">
-                  <a href="#">Celestial Event</a>
-                </li>
-                <li className="collection-item">
-                  <a href="#">Party Event</a>
-                </li>
-              </ul>
-      </TabPanel>
+          <ul className="collection">
+            {/* <FavoriteList favorites={this.state.favorites} /> */}
+            <li className="collection-item">
+              <a href="#">Lunary Event</a>
+            </li>
+            <li className="collection-item">
+              <a href="#">Solar Event</a>
+            </li>
+            <li className="collection-item">
+              <a href="#">Celestial Event</a>
+            </li>
+            <li className="collection-item">
+              <a href="#">Party Event</a>
+            </li>
+          </ul>
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <ul className="collection">
+            <li className="collection-item">
+              <a href="#">Lunary Event</a>
+            </li>
+            <li className="collection-item">
+              <a href="#">Solar Event</a>
+            </li>
+            <li className="collection-item">
+              <a href="#">Celestial Event</a>
+            </li>
+            <li className="collection-item">
+              <a href="#">Party Event</a>
+            </li>
+          </ul>
+        </TabPanel>
         {/* <Typography className={classes.padding}>Test</Typography> */}
       </div>
     </div>

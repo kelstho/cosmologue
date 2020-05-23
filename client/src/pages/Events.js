@@ -1,21 +1,44 @@
 import React, { Component } from "react"
-// import Calendar from 'react-calendar'
-// import 'react-calendar/dist/Calendar.css';
 import Calendar from "../components/Calendar";
-import EventCard from "../components/InfoCard";
-import Iframe from 'react-iframe'
+import EventsCard from "../components/EventsCard";
 import "../assets/css/Events.css";
+import API from "../utils/API";
+import FavoriteList from "../components/favoriteList"
 
 class Events extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { value: '' }
-    // this.iframe = React.createRef()
+  state = {
+    calEvents: [],
+    favorites: []
   }
 
-  // componentDidMount() {
-  //   console.log(getElementById)
+  addFavorite = favorite => {
+    const { favorites } = this.state
+    console.log(`the favorites button was clicked`)
+
+    if (!favorites.some(alreadyFavorite => alreadyFavorite.id == favorite.id)) {
+      this.setState({
+        favorites: [...this.state.favorites, favorite]
+      })
+    }
+  }
+
+  // share = (link) => {
+  //   console.log(`${link} copied to clipboard`)
   // }
+
+  getCalEvents = () => {
+    API.getCalEvents()
+      .then(res => {
+        console.log(res)
+        this.setState({
+          calEvents: res.data
+        })
+      })
+  }
+
+  componentDidMount() {
+    this.getCalEvents()
+  }
 
   render() {
     return (
@@ -26,13 +49,16 @@ class Events extends Component {
             <div className='events-div'>
               <div className="col s12 m8">
                 <div className="display-cal">
-                  {/* <Calendar onChange={this.onChange} value={this.state.date} /> */}
                   <Calendar />
                 </div>
               </div>
               <div className="col s12 m4">
                 <ul className='collection'>
-                  <EventCard
+                  <EventsCard
+                  calEvents={this.state.calEvents}
+                  // addFavorite={this.addFavorite}
+                  ></EventsCard>
+                  {/* <EventCard
                     title='Astronomical Event 1'
                     date='02/14/2020'
                     description='Insert the description here' />
@@ -51,7 +77,7 @@ class Events extends Component {
                   <EventCard
                     title='Astronomical Event 5'
                     date='02/14/2020'
-                    description='Insert the description here' />
+                    description='Insert the description here' /> */}
                 </ul>
               </div>
             </div>
@@ -62,7 +88,5 @@ class Events extends Component {
     )
   }
 }
-
-console.log(document.getElementById('event6'))
 
 export default Events;
