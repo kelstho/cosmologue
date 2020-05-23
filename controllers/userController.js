@@ -19,13 +19,21 @@ module.exports = {
   //   res.json({redirectURI: "/"});
   // },
   data: function(req, res) {
-    db.UserData.findById(req.user._id)
+    if (req.user) {
+      db.UserData.findById(req.user._id)
       .then(dbModel => res.json({ 
         username: dbModel.username,
         sign: dbModel.sign,
         followed: dbModel.followed
       }))
       .catch(err => res.status(422).json(err));
+    } else {
+      let noUser = {
+        message: "No user"
+      };
+      res.json(noUser);
+    }
+
   },
   update: function(req, res) {
     db.UserData.findByIdAndUpdate(req.user._id, req.body, {new: true})

@@ -20,19 +20,23 @@ class Profile extends Component {
   getInfo = () => {
     API.getUserInfo()
       .then(res => {
-        const sign = res.data.sign;
-        axios.post("https://aztro.sameerkumar.website?sign=" + sign + "&day=today")
-          .then(res => {
-            this.setState({
-              description: res.data.description,
-              color: res.data.color,
-              compatibility: res.data.compatibility,
-              luckyNumber: res.data.lucky_number,
-              luckyTime: res.data.lucky_time,
-              mood: res.data.mood
+        if (res.data.message = "No user") {
+          window.location.pathname = "/signup";
+        } else {
+          const sign = res.data.sign;
+          axios.post("https://aztro.sameerkumar.website?sign=" + sign + "&day=today")
+            .then(res => {
+              this.setState({
+                description: res.data.description,
+                color: res.data.color,
+                compatibility: res.data.compatibility,
+                luckyNumber: res.data.lucky_number,
+                luckyTime: res.data.lucky_time,
+                mood: res.data.mood
+              })
             })
-          })
-        this.setState({ username: res.data.username })
+          this.setState({ username: res.data.username })
+        }
       })
   }
 
