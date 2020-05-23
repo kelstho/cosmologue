@@ -32,8 +32,7 @@ module.exports = {
         message: "No user"
       };
       res.json(noUser);
-    }
-
+    };
   },
   update: function(req, res) {
     db.UserData.findByIdAndUpdate(req.user._id, req.body, {new: true})

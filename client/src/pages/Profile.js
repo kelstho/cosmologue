@@ -20,7 +20,7 @@ class Profile extends Component {
   getInfo = () => {
     API.getUserInfo()
       .then(res => {
-        if (res.data.message = "No user") {
+        if (res.data.message === "No user") {
           window.location.pathname = "/signup";
         } else {
           const sign = res.data.sign;
