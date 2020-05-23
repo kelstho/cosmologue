@@ -34,10 +34,16 @@
     color: white !important;
 }
 
-.footer {
-    justify-content: center !important;
-    padding: 0% !important;
-    background: rgba(0, 0, 0, 0.555) !important;
+.page-footer {
+    background-color: rgba(0, 0, 0, 0.418);
+    padding: 6px;
+}
+.page-footer a {
+    float: center;
+    color: white;
+    margin-bottom: 0;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 nav {
