@@ -11,7 +11,12 @@ import API from "../utils/API";
 class Profile extends Component {
   state = {
     username: "",
-    horoscope: "",
+    description: "",
+    color: "",
+    compatibility: "",
+    luckyNumber: "",
+    luckyTime: "",
+    mood: ""
     // events: []
   };
 
@@ -24,11 +29,17 @@ class Profile extends Component {
       .then(res => {
         const sign = res.data.sign;
         axios.post("https://aztro.sameerkumar.website?sign=" + sign + "&day=today")
-        .then(res => { 
-          this.setState({
-            horoscope: res.data.description
+          .then(res => {
+            console.log(res.data)
+            this.setState({
+              description: res.data.description,
+              color: res.data.color,
+              compatibility: res.data.compatibility,
+              luckyNumber: res.data.lucky_number,
+              luckyTime: res.data.lucky_time,
+              mood: res.data.mood
+            })
           })
-        })
         this.setState({ username: res.data.username })
       })
   };
@@ -42,14 +53,6 @@ class Profile extends Component {
           </div>
           <div className="row">
             <h4 className="no-mt">Welcome {this.state.username}</h4>
-          </div>
-          <div className="row">
-            <div className="col s12" id="horo-container">
-              <h4>H O R O S C O P E</h4>
-              <Horoscope
-                horoscope={this.state.horoscope}
-              />
-            </div>
           </div>
         </div>
         <div className="container">
@@ -79,11 +82,16 @@ class Profile extends Component {
               </TabView>
             </div>
             <div className="col s12 m7">
-              <div className="row no-mb">
-                <h4>Clicked Event Title</h4>
-              </div>
-              <div className="row">
-                <p>Details about clicked event Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. </p>
+              <div className="col s12" id="horo-container">
+                <h4>H O R O S C O P E</h4>
+                <Horoscope
+                  description={this.state.description}
+                  color={this.state.color}
+                  compatibility={this.state.compatibility}
+                  luckyNumber={this.state.luckyNumber}
+                  luckyTime={this.state.luckyTime}
+                  mood={this.state.mood}
+                />
               </div>
             </div>
           </div>
