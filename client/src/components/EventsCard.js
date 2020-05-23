@@ -35,6 +35,21 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function RecipeReviewCard(props) {
+
+  // state = {
+  //   list: [],
+  //   favorites: []
+  // };
+
+  // addFavorite = favorite => {
+  //   const {favorites} = this.state
+  //   if (!favorites.some(alreadyFavorite => alreadyFavorite.id == favorite.id)) {
+  //     this.setState({
+  //       favorites: [...this.state.favorites, favorite]
+  //     });
+  //   }
+  // }
+
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -42,9 +57,28 @@ export default function RecipeReviewCard(props) {
     setExpanded(!expanded);
   };
 
+  const share = (link) => {
+    console.log(`${link} copied to clipboard`)
+  }
+
+ const  addFavorite = (favorite) => {
+    // const { favorites } = this.state
+    console.log(`the ${favorite} button was clicked`)
+
+    // if (!favorites.some(alreadyFavorite => alreadyFavorite.id == favorite.id)) {
+    //   this.setState({
+    //     favorites: [...this.state.favorites, favorite]
+    //   })
+    // }
+  }
+
+  // const favorite = (event) => {
+  //   this.props.addFavorite(event)
+  // }
+
   return (
     <div>
-      {props.articles.map(results => (
+      {props.calEvents.map(results => (
         <Card className={classes.root} key={results.link}>
           <CardHeader
             action={
@@ -60,16 +94,27 @@ export default function RecipeReviewCard(props) {
               </IconButton>
             }
             title={<a href={results.link} target="_blank" rel="noreferrer noopener">{results.title}</a>}
-            subheader={results.publishDate}
+            subheader={`Date: ${results.month}/${results.day}/${results.year}`}
           />
           <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites"><FavoriteIcon /></IconButton>
-            <IconButton aria-label="share"><ShareIcon /></IconButton>
+            <IconButton
+              aria-label="add to favorites"
+              onClick={(e) => {
+                e.preventDefault()
+                addFavorite('favorites')
+              }}
+            ><FavoriteIcon /></IconButton>
+            <IconButton
+              aria-label="share"
+              onClick={(e) => {
+                share('event link')
+              }}
+            ><ShareIcon /></IconButton>
           </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
               <Typography paragraph>Description:</Typography>
-              <Typography paragraph>{results.description}</Typography>
+              <Typography paragraph>{results.summary}</Typography>
             </CardContent>
           </Collapse>
         </Card>

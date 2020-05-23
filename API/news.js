@@ -4,11 +4,11 @@ const db = require("../models");
 module.exports = {
   updateDB: async function() {
 
-    var arr = [];
+    // var arr = [];
     // call the source
     axios.get("https://newsapi.org/v2/everything?language=en&domains=nasa.gov&apiKey=3e287acea75f40dcbc3c4008f443dead")
     .then(res => {
-        console.log(res.data.articles);
+        // console.log(res.data.articles);
         res.data.articles.forEach(article => {
           let data = {
             title: article.title,

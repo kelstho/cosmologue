@@ -31,6 +31,7 @@ class Home extends Component {
   getNews = () => {
     API.getAllNews()
     .then(res => {
+      console.log(res)
       this.setState({
         articles: res.data
       })
@@ -77,7 +78,5 @@ class Home extends Component {
     )
   }
 }
-
-{/* <News articles={this.state.articles} /> */ }
 
 export default Home;

@@ -3,7 +3,7 @@ const calEventController = require("../../controllers/calEventController");
 
 // Matches with "/api/event"
 router
-  .route("/")
+  .route("/:year/:month")
   .get(calEventController.view);
 
 module.exports = router;

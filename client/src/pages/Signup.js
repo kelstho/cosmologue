@@ -126,7 +126,7 @@ class Signup extends Component {
                   type="date"
                   placeholder="Your Username"
                 />
-                <label for="birthday">Your Birthday</label>
+                <label htmlFor="birthday">Your Birthday</label>
               </div>
             </div>
             <div className="row">

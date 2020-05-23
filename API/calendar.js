@@ -8,7 +8,7 @@ module.exports = {
     let currentYear = d.getFullYear().toString();
     const months = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
 
-    var arr = [];
+    var calEvents = [];
     // call the source
     for (currentMonth of months) {
       await axios.get(`https://in-the-sky.org/newscal.php?year=${currentYear}&month=${currentMonth}&maxdiff=7`)
@@ -46,12 +46,12 @@ module.exports = {
               summary: summary,
             };
     
-          arr.push(eventsData)
+          calEvents.push(eventsData)
     
         })    
       })
     }
-    await arr.forEach((event) => {
+    await calEvents.forEach((event) => {
       db.CalEvent.updateOne({
         year: event.year,
         month: event.month,
