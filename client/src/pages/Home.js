@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import "../assets/css/Home.css";
 import NewsCard from "../components/NewsCard";
 import API from "../utils/API";
