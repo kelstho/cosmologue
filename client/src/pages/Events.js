@@ -63,6 +63,6 @@ class Events extends Component {
   }
 }
 
-console.log(document.getElementById('event6'))
+// console.log(document.getElementById('event6'))
 
 export default Events;

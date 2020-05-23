@@ -20,8 +20,15 @@ class Profile extends Component {
   };
 
   getInfo = () => {
+    console.log("fetch trigger");
     API.getUserInfo()
       .then(res => {
+        console.log(res);
+        if (res.data.message = "No user") {
+          window.location.pathname = "/signup";
+        } else {
+          this.setState({ username: res.data.username });
+        }
         // const sign = res.data.sign;
         // axios.post("https://aztro.sameerkumar.website?sign=" + sign + "&day=today")
         // .then(res => { 
@@ -29,7 +36,7 @@ class Profile extends Component {
         //     horoscope: res.data.description
         //   })
         // })
-        this.setState({ username: res.data.username })
+        // this.setState({ username: res.data.username })
       })
   };
 
