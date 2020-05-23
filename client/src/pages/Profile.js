@@ -18,10 +18,8 @@ class Profile extends Component {
   };
 
   getInfo = () => {
-    console.log("fetch trigger");
     API.getUserInfo()
       .then(res => {
-        console.log(res);
         if (res.data.message = "No user") {
           window.location.pathname = "/signup";
         } else {
