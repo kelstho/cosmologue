@@ -71,6 +71,7 @@ class Home extends Component {
                 >
                 </NewsCard>
               </ul>
+              <a href="https://newsapi.org" target="_blank" rel="noreferrer noopener">Powered by News API</a>
             </div>
           </div>
         </div>
