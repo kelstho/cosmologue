@@ -7,10 +7,10 @@ import axios from "axios";
 class Signup extends Component {
 
   state = {
-    name: "",
-    username: "",
+    newUsername: "",
     sign: "",
-    birthday: "",
+    newPassword: "",
+    username: "",
     password: ""
   }
 
@@ -19,7 +19,7 @@ class Signup extends Component {
     let value = event.target.value;
     const name = event.target.name;
 
-    if (name === "password") {
+    if (name === "newPassword") {
       value = value.substring(0, 15);
     };
     console.log(this.state);
@@ -30,28 +30,27 @@ class Signup extends Component {
 
   handleSignupSubmit = event => {
     event.preventDefault();
-    if (!this.state.name || !this.state.username || !this.state.birthday) {
+    if (!this.state.newUsername || !this.state.sign) {
       alert("Please fill out all the required information");
-    } else if (this.state.password.length < 6) {
+    } else if (this.state.newPassword.length < 6) {
       alert("Please choose a more secure password");
     } else {
-      alert(`Hello ${this.state.name}`);
+      alert(`Welcome ${this.state.newUsername}`);
     }
 
     axios.post(
       "/api/user",
       {
-        username: this.state.username,
-        sign: this.state.birthday,
-        password: this.state.password
+        username: this.state.newUsername,
+        sign: this.state.sign,
+        password: this.state.newPassword
       }
     )
 
     this.setState({
-      name: "",
-      username: "",
-      birthday: "",
-      password: ""
+      newUsername: "",
+      sign: "",
+      newPassword: "",
     });
   }
 
@@ -62,7 +61,7 @@ class Signup extends Component {
     } else if (!this.state.password) {
       alert("Please enter your password");
     } else {
-      alert(`Hello ${this.state.name}`);
+      alert(`Hello ${this.state.username}`);
     }
 
     axios.post(
@@ -93,47 +92,30 @@ class Signup extends Component {
             <div className="row">
               <div className="input-field col s12">
                 <input
-                  value={this.state.name}
-                  name="name"
+                  value={this.state.newUsername}
+                  name="newUsername"
                   onChange={this.handleInputChange}
                   type="text"
-                  placeholder="Your Name"
+                  placeholder="Choose a Username"
                 />
               </div>
             </div>
             <div className="row">
               <div className="input-field col s12">
                 <input
-                  value={this.state.username}
-                  name="username"
+                  value={this.state.sign}
+                  name="sign"
                   onChange={this.handleInputChange}
                   type="text"
-                  placeholder="Your Username"
+                  placeholder="Enter your Astrological Sign"
                 />
-              </div>
-            </div>
-            <div className="row">
-              <Select
-                value={this.state.sign}
-              />
-            </div>
-            <div className="row">
-              <div className="input-field col s6">
-                <input
-                  value={this.state.birthday}
-                  name="birthday"
-                  onChange={this.handleInputChange}
-                  type="date"
-                  placeholder="Your Username"
-                />
-                <label for="birthday">Your Birthday</label>
               </div>
             </div>
             <div className="row">
               <div className="input-field col s12">
                 <input
-                  value={this.state.password}
-                  name="password"
+                  value={this.state.newPassword}
+                  name="newPassword"
                   onChange={this.handleInputChange}
                   type="password"
                   placeholder="Choose a Password"
@@ -141,10 +123,10 @@ class Signup extends Component {
               </div>
             </div>
             <div className="row">
-              <button 
-              onClick={this.handleSignupSubmit}
+              <button
+                onClick={this.handleSignupSubmit}
               >
-                Sign Up
+                SIGN UP
               </button>
             </div>
           </form>
@@ -161,7 +143,7 @@ class Signup extends Component {
                   name="username"
                   onChange={this.handleInputChange}
                   type="text"
-                  placeholder="Your Username"
+                  placeholder="Enter your Username"
                 />
               </div>
             </div>
@@ -172,7 +154,7 @@ class Signup extends Component {
                   name="password"
                   onChange={this.handleInputChange}
                   type="password"
-                  placeholder="Choose a Password"
+                  placeholder="Enter your Password"
                 />
               </div>
             </div>
@@ -180,7 +162,7 @@ class Signup extends Component {
               <button
                 onClick={this.handleLoginSubmit}
               >
-                Log In
+                LOG IN
               </button>
             </div>
           </form>

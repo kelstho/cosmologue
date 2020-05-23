@@ -1,47 +1,24 @@
-// Old model
+// for future development -> saving events/articles
 
-// const user = {
+// const UserData = {
 //   username: "",
 //   sign: "",
-//   followed: {
-//     api1: {
-//       id: "",
-//       name: "",
-//       link: ""
-//     },
-//     api2: {
-//       id: "",
-//       name: "",
-//       test: ""
-//     },
-//     api3: {
-//       name: "",
-//       id: ""
-//     }
-//   }
+//   followed: [{ type: Schema.Types.ObjectId, ref: 'Articles' }]
+// };
+
+// const Article = {
+//   _id: "",
+//   apiRef: "",
+//   apiID: "",
+//   title: "",
+//   data: {}
+// };
+
+// const Event = {
+//   year: "",
+//   month: "",
+//   day: "",
+//   title: "",
+//   link: "",
+//   summary: ""
 // }
-
-
-
-const UserData = {
-  username: "",
-  sign: "",
-  followed: [{ type: Schema.Types.ObjectId, ref: 'Articles' }]
-};
-
-const Article = {
-  _id: "",
-  apiRef: "",
-  apiID: "",
-  title: "",
-  data: {}
-};
-
-const Event = {
-  year: "",
-  month: "",
-  day: "",
-  title: "",
-  link: "",
-  summary: ""
-}

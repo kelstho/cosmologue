@@ -2,13 +2,11 @@
     text-align: center;
 }
 
-
 /* controls big main navbar */
 .nav {
     background-color: transparent;
     width: inherit;
 }
-
 
 /* controls drawer nav */
 .drawer {
@@ -33,7 +31,7 @@
 }
 /* keep drawer button white on small screens */
 .mdl-layout__drawer-button {
-    color: white !important
+    color: white !important;
 }
 
 .footer {
@@ -43,7 +41,7 @@
 }
 
 nav {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .page-content {

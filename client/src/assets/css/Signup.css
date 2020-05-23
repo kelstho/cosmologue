@@ -1,12 +1,18 @@
-input[type=text], input[type=password], input[type=date] {
-  color: white;
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+    color: white;
 }
 
 .no-margin {
-  margin-top: 0px;
-  margin-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
-#simple-select {
-  color: white;
+button {
+    padding: 10px 15px 10px 15px;
+    color: white;
+    background-color: #39049c;
+    border-color: black;
+    cursor: pointer;
 }
