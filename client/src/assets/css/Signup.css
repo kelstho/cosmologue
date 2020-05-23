@@ -7,6 +7,10 @@ input[type=text], input[type=password], input[type=date] {
   margin-bottom: 0px;
 }
 
-#simple-select {
+button {
+  padding: 10px 15px 10px 15px;
   color: white;
+  background-color: #39049C;
+  border-color: black;
+  cursor: pointer;
 }

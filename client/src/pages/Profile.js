@@ -15,10 +15,12 @@ class Profile extends Component {
   //   this.state = {}
   // }
   state = {
+
     // name: "",
     horoscope: "",
     // list: [],
     favorites: []
+
   };
 
   // display favorite events/articles
@@ -30,19 +32,17 @@ class Profile extends Component {
   //     })
   //   }
   // }
-
-  // display horoscope api
-  getHoro = async () => {
-    const api = "https://aztro.sameerkumar.website?sign=aries&day=today"
-    await axios
-      .post(api)
-      .then(response => {
-        this.setState({
-          horoscope: response.data.description
+  getInfo = () => {
+    API.getUserInfo()
+      .then(res => {
+        const sign = res.data.sign;
+        axios.post("https://aztro.sameerkumar.website?sign=" + sign + "&day=today")
+        .then(res => { 
+          this.setState({
+            horoscope: res.data.description
+          })
         })
-      })
-      .catch(err => {
-        console.log(err)
+        this.setState({ username: res.data.username })
       })
   }
 
