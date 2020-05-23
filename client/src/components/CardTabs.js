@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import FavoriteList from './favoriteList'
 
 
 function TabPanel(props) {
@@ -131,7 +129,6 @@ export default function CustomizedTabs() {
             </li>
           </ul>
         </TabPanel>
-        {/* <Typography className={classes.padding}>Test</Typography> */}
       </div>
     </div>
 
