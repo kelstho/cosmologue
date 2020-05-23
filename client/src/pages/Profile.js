@@ -21,8 +21,8 @@ class Profile extends Component {
     compatibility: "",
     luckyNumber: "",
     luckyTime: "",
-    mood: ""
-    favorites: []
+    mood: "",
+   //favorites: []
   };
 
   };
@@ -61,7 +61,7 @@ class Profile extends Component {
   };
 
   render() {
-    const { favorites } = this.props
+    //const { favorites } = this.props
     return (
       <div>
         <div className="container">
