@@ -7,10 +7,10 @@ import Signup from '../pages/Signup'
 
 const Routes = () => (
     <Switch>
-        <Route exact path = '/' component = {Home} />
-        <Route path = '/events' component = {Events} />
-        <Route path = '/profile' component = {Profile} />
-        <Route path = '/signup' component = {Signup} />
+        <Route exact path='/' component={Home} />
+        <Route path='/events' component={Events} />
+        <Route path='/profile' component={Profile} />
+        <Route path='/signup' component={Signup} />
     </Switch>
 )
 

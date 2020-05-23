@@ -3,18 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Popover from '@material-ui/core/Popover';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,6 +19,11 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: 500,
     marginBottom: 10,
     textAlign: "left"
+  },
+  typography: {
+    padding: theme.spacing(2),
+    color: 'white',
+    background: 'linear-gradient(to right, #4A00E0, #8E2DE2)'
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -34,47 +35,20 @@ const useStyles = makeStyles((theme) => ({
   expandOpen: { transform: 'rotate(180deg)' }
 }));
 
-export default function RecipeReviewCard(props) {
-
-  // state = {
-  //   list: [],
-  //   favorites: []
-  // };
-
-  // addFavorite = favorite => {
-  //   const {favorites} = this.state
-  //   if (!favorites.some(alreadyFavorite => alreadyFavorite.id == favorite.id)) {
-  //     this.setState({
-  //       favorites: [...this.state.favorites, favorite]
-  //     });
-  //   }
-  // }
+export default function EventsCard(props) {
 
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null)
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+  const open = Boolean(anchorEl)
+  const id = open ? 'simple-popover' : undefined
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
-  const share = (link) => {
-    console.log(`${link} copied to clipboard`)
-  }
-
- const  addFavorite = (favorite) => {
-    // const { favorites } = this.state
-    console.log(`the ${favorite} button was clicked`)
-
-    // if (!favorites.some(alreadyFavorite => alreadyFavorite.id == favorite.id)) {
-    //   this.setState({
-    //     favorites: [...this.state.favorites, favorite]
-    //   })
-    // }
-  }
-
-  // const favorite = (event) => {
-  //   this.props.addFavorite(event)
-  // }
 
   return (
     <div>
@@ -98,19 +72,30 @@ export default function RecipeReviewCard(props) {
           />
           <CardActions disableSpacing>
             <IconButton
-              aria-label="add to favorites"
-              onClick={(e) => {
-                e.preventDefault()
-                addFavorite('favorites')
-              }}
-            ><FavoriteIcon /></IconButton>
-            <IconButton
               aria-label="share"
               onClick={(e) => {
-                share('event link')
+                setAnchorEl(e.currentTarget)
+                navigator.clipboard.writeText(results.link)
               }}
             ><ShareIcon /></IconButton>
           </CardActions>
+          <Popover
+            id={id}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'center',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'center',
+            }}
+            elevation={3}
+          >
+            <Typography className={classes.typography}>Link copied to clipboard!</Typography>
+          </Popover>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
               <Typography paragraph>Description:</Typography>
