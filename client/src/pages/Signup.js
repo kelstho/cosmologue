@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Select from "../components/Select";
-import Button from "../components/Button";
 import "../assets/css/Signup.css";
 import axios from "axios";
 

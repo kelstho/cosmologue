@@ -39,13 +39,11 @@ function App() {
           </Content>
 
           {/* FOOTER */}
-          <Footer className='footer' size="mini">
-            <FooterSection type="middle" logo="Cosmologue">
-              <FooterLinkList>
-                <a href='https://github.com/aseawright1/CosmoLogue'>View on GitHub</a>
-              </FooterLinkList>
-            </FooterSection>
-          </Footer>
+          <footer class="page-footer">
+            <a>Cosmologue 2020</a>
+            <a href="https://github.com/aseawright1/CosmoLogue" target="_blank"
+            >View on GitHub</a>
+          </footer>
         </Layout>
       </div>
     </BrowserRouter>

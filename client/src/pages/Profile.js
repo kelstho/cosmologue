@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Horoscope from "../components/Horoscope";
-import FavCard from "../components/EventsCard";
-import TabView from "../components/CardTabs";
 import "../assets/css/Profile.css";
 import axios from "axios";
 import API from "../utils/API"
+import ZodiacCalendar from "../assets/images/zodiac.png";
+import ImageContainer from "../components/ImageContainer";
 
 class Profile extends Component {
   state = {
@@ -53,15 +53,15 @@ class Profile extends Component {
         </div>
         <div className="container">
           <div className="row">
-            {/* <div className="col s12 m5">
-              <TabView>
-
-              </TabView>
-            </div> */}
-            <div className="col s12">
-            {/* <div className="col s12 m7"> */}
+            <div className="col s12 m6">
+              <ImageContainer
+                image={ZodiacCalendar}
+                alt={"Zodiac Calendar"}
+              />
+            </div>
+            <div className="col s12 m6">
               <div className="col s12" id="horo-container">
-                <h4>H O R O S C O P E</h4>
+                <h3>H O R O S C O P E</h3>
                 <Horoscope
                   description={this.state.description}
                   color={this.state.color}
