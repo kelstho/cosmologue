@@ -36,7 +36,7 @@ class Profile extends Component {
               })
             })
           this.setState({ username: res.data.username })
-        }
+        };
       })
   }
 
