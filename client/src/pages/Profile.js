@@ -4,21 +4,34 @@ import SavedEvents from "../components/SavedEvents";
 import ClickedEvent from "../components/ClickedEvent"
 import FavCard from "../components/InfoCard";
 import TabView from "../components/CardTabs";
+import favoriteList from "../components/favoriteList";
 import "../assets/css/Profile.css";
 import axios from "axios";
-import API from "../utils/API";
+import FavoriteList from "../components/favoriteList";
 
 class Profile extends Component {
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {}
+  // }
   state = {
-    username: "",
+
+    // name: "",
     horoscope: "",
-    // events: []
+    // list: [],
+    favorites: []
+
   };
 
-  componentDidMount() {
-    this.getInfo("");
-  };
-
+  // display favorite events/articles
+  // addFavorite = favorite => {
+  //   const { favorites } = this.state
+  //   if (!favorites.some(alreadyFavorite => alreadyFavorite.id == favorite.id)) {
+  //     this.setState({
+  //       favorites: [...this.state.favorites, favorite]
+  //     })
+  //   }
+  // }
   getInfo = () => {
     API.getUserInfo()
       .then(res => {
@@ -31,9 +44,15 @@ class Profile extends Component {
         })
         this.setState({ username: res.data.username })
       })
+  }
+
+  componentDidMount() {
+    this.getHoro()
+    // this.addFavorite()
   };
 
   render() {
+    const { favorites } = this.props
     return (
       <div>
         <div className="container">
@@ -41,7 +60,7 @@ class Profile extends Component {
             <h1>P R O F I L E</h1>
           </div>
           <div className="row">
-            <h4 className="no-mt">Welcome {this.state.username}</h4>
+            <h4 className="no-mt">Welcome User Name!</h4>
           </div>
           <div className="row">
             <div className="col s12" id="horo-container">
@@ -55,27 +74,39 @@ class Profile extends Component {
         <div className="container">
           <div className="row">
             <div className="col s12 m5">
+              <ul>
+                {/* {() => <FavoriteList favorites={this.state.favorites}/>} */}
+                {/* {favorites.map(events => {
+                  return (
+                    <li key={events.id}>
+                      <div>
+                        <p>{events.title}</p>
+                      </div>
+                    </li>
+                  )
+                })} */}
+              </ul>
               <TabView>
-                {/* <FavCard
-                    title='News Event 1'
-                    date='02/14/2020'
-                    description='Insert the description here' />
-                  <FavCard
-                    title='News Event 2'
-                    date='02/14/2020'
-                    description='Insert the description here' />
-                  <FavCard
-                    title='News Event 3'
-                    date='02/14/2020'
-                    description='Insert the description here' />
-                  <FavCard
-                    title='News Event 4'
-                    date='02/14/2020'
-                    description='Insert the description here' />
-                  <FavCard
-                    title='News Event 5'
-                    date='02/14/2020'
-                    description='Insert the description here' /> */}
+                <FavCard
+                  title='News Event 1'
+                  date='02/14/2020'
+                  description='Insert the description here' />
+                <FavCard
+                  title='News Event 2'
+                  date='02/14/2020'
+                  description='Insert the description here' />
+                <FavCard
+                  title='News Event 3'
+                  date='02/14/2020'
+                  description='Insert the description here' />
+                <FavCard
+                  title='News Event 4'
+                  date='02/14/2020'
+                  description='Insert the description here' />
+                <FavCard
+                  title='News Event 5'
+                  date='02/14/2020'
+                  description='Insert the description here' />
               </TabView>
             </div>
             <div className="col s12 m7">
@@ -88,17 +119,9 @@ class Profile extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </div >
     )
   }
 };
-
-{/* <h4>Welcome {this.state.name}</h4> */ }
-
-{/* <Horoscope horoscope={this.state.horoscope} /> */ }
-
-{/* <SavedEvents events={this.state.events} /> */ }
-
-{/* <ClickedEvent /> */ }
 
 export default Profile;

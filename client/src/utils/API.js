@@ -11,5 +11,12 @@ export default {
 
   getDailyPic: function () {
     return axios.get("/api/picOTD")
+  },
+
+  getCalEvents: function () {
+    return axios.get("/api/event/2020/05")
   }
+  // getCalEvents: function (data) {
+  //   return axios.get("/api/event/${data.year}/${data.day}")
+  // }
 }
