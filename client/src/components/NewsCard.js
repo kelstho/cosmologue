@@ -62,12 +62,12 @@ export default function RecipeReviewCard(props) {
             <IconButton aria-label="add to favorites"><FavoriteIcon /></IconButton>
             <IconButton aria-label="share"><ShareIcon /></IconButton>
           </CardActions>
-//           <Collapse in={expanded} timeout="auto" unmountOnExit>
-//             <CardContent>
-//               <Typography paragraph>Description:</Typography>
-//               <Typography paragraph>{results.description}</Typography>
-//             </CardContent>
-//           </Collapse>
+           {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
+             <CardContent>
+               <Typography paragraph>Description:</Typography>
+               <Typography paragraph>{results.description}</Typography>
+             </CardContent>
+           </Collapse> */}
         </Card>
       ))}
     </div>

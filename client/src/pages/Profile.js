@@ -8,6 +8,7 @@ import favoriteList from "../components/favoriteList";
 import "../assets/css/Profile.css";
 import axios from "axios";
 import FavoriteList from "../components/favoriteList";
+import API from "../utils/API"
 
 class Profile extends Component {
   // constructor(props) {
@@ -23,8 +24,6 @@ class Profile extends Component {
     luckyTime: "",
     mood: "",
    //favorites: []
-  };
-
   };
 
   // display favorite events/articles
@@ -69,7 +68,7 @@ class Profile extends Component {
             <h1>P R O F I L E</h1>
           </div>
           <div className="row">
-            <h4 className="no-mt">Welcome User Name!</h4>
+    <h4 className="no-mt">Welcome {this.state.username}!</h4>
           </div>
         </div>
         <div className="container">
