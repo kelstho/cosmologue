@@ -1,3 +1,3 @@
 # Cosmologue
 
-![Home Page] (/client/src/assets/images/home.png?raw=true "Optional Title")
+![Home Page](/client/src/assets/images/home.png?raw=true)
