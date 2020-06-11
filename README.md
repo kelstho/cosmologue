@@ -1,5 +1,5 @@
 # Cosmologue
-We created this app as a way for people to stay in touch with nature and the cosmic forces that are constantly at work in our lives. Cosmologue allows users to view a feed of NASA news, a photo of the day + description, upcoming cosmic events (both as a list and in calendar form), and personalized astrological information. A user can create a profile where they choose a user name, a password, and provide their astrological sign. The user can then log in to their profile page, which will allow them to view information that is updated on a daily basis about their horoscope.
+We created this app as a way for people to stay in touch with nature and the cosmic forces that are constantly at work in our lives by combining astronomy with astrology. Cosmologue allows users to view a feed of NASA news, a photo of the day + description, upcoming cosmic events (both as a list and in calendar form), and personalized astrological information. A user can create a profile where they choose a user name, a password, and provide their astrological sign. The user can then log in to their profile page, which will allow them to view information that is updated on a daily basis about their horoscope.
 
 ## Home
 ![Home Page](/client/src/assets/images/home.png?raw=true)
@@ -17,6 +17,14 @@ The profile page features horoscope information for the user. At the top of the 
 ![Signup Page](/client/src/assets/images/signup.png?raw=true)
 ![Login Page](/client/src/assets/images/login.png?raw=true)
 A user can use this page to sign up for an account, and then log in to that account. Users provide a username, password, and their astrological sign, then they press the “sign up” button. An alert will appear welcoming the user to Cosmologue. After they have signed up, the user enters their username and password into the log in section and presses “log in.” Once they have successfully logged in, an alert will appear that says “Hello [username].” At this point, the user is successfully authenticated and they may navigate to the profile page.
+
+## Technologies
+APIs: Aztro Astrology API, NASA APoD API, News API
+
+Frameworks/Libraries: React, Material-UI, React-MDL, Materialize, Axios, MongoDB, Mongoose, Express, Express-Session, Node.js, Passport, Cheerio
+
+## Creators
+Evan LaFollette, Alek Seawright, Kelly Thompson, Jared Higgins
 
 ## Links
 [Deployed Application](https://cosmologue.herokuapp.com)
