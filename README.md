@@ -19,9 +19,11 @@ The profile page features horoscope information for the user. At the top of the 
 A user can use this page to sign up for an account, and then log in to that account. Users provide a username, password, and their astrological sign, then they press the “sign up” button. An alert will appear welcoming the user to Cosmologue. After they have signed up, the user enters their username and password into the log in section and presses “log in.” Once they have successfully logged in, an alert will appear that says “Hello [username].” At this point, the user is successfully authenticated and they may navigate to the profile page.
 
 ## Technologies
+Database: MongoDB
+
 APIs: Aztro Astrology API, NASA APoD API, News API
 
-Frameworks/Libraries: React, Material-UI, React-MDL, Materialize, Axios, MongoDB, Mongoose, Express, Express-Session, Node.js, Passport, Cheerio
+Frameworks/Libraries: React, Material-UI, React-MDL, Materialize, Axios, Mongoose, Node, Express, Express-Session, Passport, Cheerio
 
 ## Creators
 Evan LaFollette, Alek Seawright, Kelly Thompson, Jared Higgins
